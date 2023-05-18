@@ -1,0 +1,284 @@
+.inner {
+    max-width: 1200px;
+    /* 반응형 */
+    margin: 0 auto;
+    /* 가운데 오게 하는 공식 */
+    padding: 0 15px;
+    /* 양쪽에 15px씩 들어가 1170px 맞추는 용도 */
+
+}
+
+/* 시각장애인을 위한 대체 텍스트 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+.wrapper {}
+
+.header {}
+
+.header .inner {
+    display: flex;
+    align-items: center;
+    /* 상하 중앙 */
+    height: 100px;
+}
+
+.header .gnb {
+    margin: 0 0 0 auto;
+}
+
+.header .gnb>ul {
+    display: flex;
+    gap: 40px;
+}
+
+.header .gnb>ul>li {
+    position: relative;
+}
+
+.header .gnb>ul>li>a {
+    display: block;
+    font-size: 18px;
+}
+
+
+.header .gnb>ul>li~li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 1px;
+    height: 12px;
+    background: #ddd;
+    transform: translate(0, -50%);
+    /* 샤프한 느낌 */
+    /*  transform: translate(-50, -50%); 뭉특한 느낌 */
+
+}
+
+.header .search {
+    margin: 0 0 0 50px;
+}
+
+
+.header .search i {
+    font-size: 30px;
+}
+
+.main_visual {
+    position: relative;
+}
+
+/* dots 의 기준을 잡아주려고 */
+
+.main_visual .main_slide {}
+
+.main_visual .main_slide figure {
+    position: relative;
+    height: 600px;
+}
+
+.main_visual .main_slide .itm01 {
+    background: url(../images/mainvisual01.jpg) no-repeat center center/cover;
+}
+
+.main_visual .main_slide .itm02 {
+    background: url(../images/mainvisual02.jpg) no-repeat center center/cover;
+}
+
+.main_visual .main_slide .itm03 {
+    background: url(../images/mainvisual03.jpg) no-repeat center center/cover;
+}
+
+.main_visual .main_slide .slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    padding: 0 15px;
+}
+
+.main_visual .main_slide .slogan strong {
+    display: block;
+    margin: 0 0 10px 0;
+    font-size: 50px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.main_visual .main_slide .slogan p {
+    margin: 0 0 30px 0;
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.main_visual .main_slide .slogan a {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 3px 12px 5px 12px;
+}
+
+.main_visual .main_slide .itm02 .slogan strong {
+
+    color: #444;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.main_visual .main_slide .itm02 .slogan p {
+    color: #444;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.main_visual .dots {
+    position: absolute;
+    /* main_visual 이 부모 요소니까 릴레이티브 걸어줌 */
+    top: 50%;
+    left: 50%;
+    margin: 0 0 0 585px;
+    /* 오른쪽으로 밀기 600px기준 -15px */
+    transform: translate(-100%, -50%);
+    background: #fff;
+    border: 1px solid #ddd;
+    user-select: none;
+}
+
+.main_visual .dots li {
+    padding: 10px;
+}
+
+.main_visual .dots li~li {
+    border-top: 1px solid #ddd;
+}
+
+.main_visual .dots .btn {
+    cursor: pointer;
+}
+
+/* 화살표 반응형으로 만들기 */
+.main_visual .arrows {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    max-width: 1400px;
+    width: 100%;
+}
+
+/* 마우스 올렸을 때 화살표 보이게 하기 */
+.main_visual:hover .arrows {
+    display: block;
+
+}
+
+.main_visual .arrows i {
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0px;
+    transform: translate(0%, -50%);
+
+}
+
+.main_visual .arrows .left {
+    position: absolute;
+    top: 0;
+    left: 15px;
+}
+
+.main_visual .arrows .right {
+    position: absolute;
+    top: 0;
+    right: 15px;
+}
+
+
+
+/* section같은 큰 박스와 박스 사이를 띄울 때 마진쓰면 안되고 패딩 써라 */
+.main_content {
+    padding: 100px 0;
+}
+
+.main_content .tit {
+    margin: 0 auto 30px auto;
+}
+
+.main_content .tit h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.main_content .tit p {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+.main_content .content {
+    display: flex;
+    gap: 30px;
+}
+
+.main_content .content figure {
+    flex: 1;
+    /* 이미지가 한칸씩 차지하게 하기 */
+    text-align: center;
+}
+
+.main_content .content figure .box {
+    margin: 0 0 20px 0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.main_content .content figure strong {
+    display: block;
+    margin: 0 0 20px 0;
+}
+
+.main_content .content figure a {
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 3px 12px;
+
+}
+
+
+.main_content .content figure img {
+    transition: 0.5s;
+
+}
+
+.main_content .content figure:hover img {
+    transform: scale(1.1);
+
+}
+
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.footer .top {
+    line-height: 80px;
+    border-bottom: 1px solid #555;
+}
+
+.footer address {
+    line-height: 80px;
+}
+
+
+/* 큰 박스는 패딩으로 잡고, 내용물 박스는 마진을 주지만 마지막 박스에는 마진을 주지 않는다 */
